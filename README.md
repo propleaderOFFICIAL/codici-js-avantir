@@ -18,6 +18,6 @@ Ogni file è pronto per essere copiato e incollato in Webflow (Embed, Custom Cod
 Oppure clona il repo e tieni i file in sync:
 
 ```bash
-git clone https://github.com/TUO-USERNAME/codici-js-prop-leader.git
+git clone https://github.com/propleaderOFFICIAL/codici-js-prop-leader.git
 cd codici-js-prop-leader
 ```
