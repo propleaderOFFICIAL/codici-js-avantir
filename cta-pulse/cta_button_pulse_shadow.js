@@ -1,12 +1,15 @@
 (function () {
-    const TARGET_SELECTOR = '#button-cta';
+    /* Tutti gli elementi con id="button-cta" o class="button-cta" */
+    const TARGET_SELECTOR = '#button-cta, .button-cta';
     const ANIMATION_CLASS = 'cta-pulse-shadow';
 
     function applyCtaPulse() {
-        var el = document.querySelector(TARGET_SELECTOR);
-        if (el && !el.classList.contains(ANIMATION_CLASS)) {
-            el.classList.add(ANIMATION_CLASS);
-        }
+        var elements = document.querySelectorAll(TARGET_SELECTOR);
+        elements.forEach(function (el) {
+            if (el && !el.classList.contains(ANIMATION_CLASS)) {
+                el.classList.add(ANIMATION_CLASS);
+            }
+        });
     }
 
     function init() {
