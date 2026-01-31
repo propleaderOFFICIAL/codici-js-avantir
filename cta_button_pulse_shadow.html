@@ -1,0 +1,42 @@
+<style>
+    /* Box-shadow esterno che pulsa – gradiente #4facfe → #8f00ff */
+    @keyframes ctaPulseShadow {
+        0%, 100% {
+            box-shadow:
+                0 0 20px 1px rgba(79, 172, 254, 0.5),
+                0 0 40px 2px rgba(143, 0, 255, 0.3);
+        }
+        50% {
+            box-shadow:
+                0 0 32px 4px rgba(79, 172, 254, 0.65),
+                0 0 64px 6px rgba(143, 0, 255, 0.45);
+        }
+    }
+
+    .cta-pulse-shadow {
+        animation: ctaPulseShadow 2s ease-in-out infinite;
+        will-change: box-shadow;
+    }
+</style>
+
+<script>
+(function () {
+    const TARGET_SELECTOR = '#button-cta';
+    const ANIMATION_CLASS = 'cta-pulse-shadow';
+
+    function applyCtaPulse() {
+        const el = document.querySelector(TARGET_SELECTOR);
+        if (el && !el.classList.contains(ANIMATION_CLASS)) {
+            el.classList.add(ANIMATION_CLASS);
+        }
+    }
+
+    applyCtaPulse();
+    document.addEventListener('DOMContentLoaded', applyCtaPulse);
+
+    var observer = new MutationObserver(function () {
+        applyCtaPulse();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
