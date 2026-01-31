@@ -25,18 +25,25 @@
     const ANIMATION_CLASS = 'cta-pulse-shadow';
 
     function applyCtaPulse() {
-        const el = document.querySelector(TARGET_SELECTOR);
+        var el = document.querySelector(TARGET_SELECTOR);
         if (el && !el.classList.contains(ANIMATION_CLASS)) {
             el.classList.add(ANIMATION_CLASS);
         }
     }
 
-    applyCtaPulse();
-    document.addEventListener('DOMContentLoaded', applyCtaPulse);
-
-    var observer = new MutationObserver(function () {
+    function init() {
         applyCtaPulse();
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+        var body = document.body;
+        if (body) {
+            var observer = new MutationObserver(applyCtaPulse);
+            observer.observe(body, { childList: true, subtree: true });
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();
 </script>
