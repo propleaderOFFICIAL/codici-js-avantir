@@ -1,6 +1,6 @@
-# Codici JS Sito Web Prop Leader
+# Codici JS Sito Web Avantir
 
-Script e snippet HTML/JS/CSS per il sito Prop Leader (Webflow).
+Script e snippet HTML/JS/CSS per il sito Avantir (Webflow).
 
 Ogni file è pronto per essere copiato e incollato in Webflow (Embed, Custom Code, ecc.) o usato come riferimento.
 
